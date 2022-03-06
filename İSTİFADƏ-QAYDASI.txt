@@ -1,0 +1,63 @@
+==Necə istifadə etməli== [bələdçi]
+
+GitHub-da ona ulduz verin
+
+MÜNDƏRİCAT
+
+1) İstifadə üçün addımlar
+2) Problemlərin aradan qaldırılması
+
+==İSTİFADƏ ÜÇÜN ADDIMLAR==
+
+addım 1: Əlavə etmək üçün manager.py istifadə edərək hesabların saxlanması
+
+i) Repo kataloqunda terminalı açın və əmr daxil edin
+>>> python manager.py
+ Yeni hesablar daxil etmək istəyirsinizsə, 1-ci variantı seçin
+ Api id, Api hash və telefon nömrəsini daxil edin
+ daha çox hesab əlavə etmək istəyirsinizsə, 'y' daxil edin; deyilsə, 'n' daxil edin və enter düyməsini basın
+ 
+ Bütün qadağan olunmuş hesabları filtrləmək istəyirsinizsə, 2-ci variantı seçin. O, bütün qadağan olunmuş hesabları siləcək
+ Bütün hesabları göstərmək üçün 3-cü variantı seçin
+ Hesabları silmək üçün 4-cü variantı seçin
+ Sonra silmək üçün hesabı seçin və Enter düyməsini basın
+
+
+addım 2: python scraper.py istifadə edərək üzvlərin qazınması
+
+Terminalda işə salın >>> python scraper.py
+Qırmaq və daxil etmək üçün hesab seçin
+İctimai qrupdan yoxsa şəxsi qrupdan sıyrılmağı seçin
+
+     İCTİMAİ QRUPLAR
+     Tutaq ki, ictimai qrup istifadəçi adı @Gorup-dur. Yalnız 'Bu Qrup' daxil edin. '@' işarəsini buraxın və enter düyməsini basın
+     ÖZƏL QRUPLAR
+     Dəvət linkini kopyalayın və terminala yapışdırın və enter düyməsini basın
+  
+     Sonra üzvləri yığılacaq
+ 
+     Sonra o, aktiv istifadəçiləri süzgəcdən keçirib-filtrləməyinizi soruşacaq[SON GÖRÜŞÜM]. y/n seçin və davam edin
+
+addım 3: tsadder.py istifadə edərək üzvlərin əlavə edilməsi
+
+ >>> python tsadder.py terminalında işə salın
+ O, sessiyalar yaradacaq və daxil olmadıqda giriş kodunu tələb edəcək. GİRİŞ KODU OLMAZSA,
+ 'S' düyməsini basın və KEÇMƏK ÜÇÜN ENTER düyməsini basın
+ Sonra ictimai qrupun istifadəçi adını @ işarəsi olmadan daxil edin. Bütün hesablardan qoşulacaq
+ Sonra istifadə ediləcək hesabların sayını daxil edin
+HƏR HESAB ƏLAVƏ ETMƏK ÜÇÜN 60 İSTİFADƏÇİ ALACAQ. MƏXFİLLİK MƏHDUDİYYƏTLƏRİ VƏ YA DAŞQIN XƏTASI ÜÇÜN 60-DAN AZ OLA BİLƏR
+Sonra xəbərdarlığı oxuyun və davam etmək üçün enter düyməsini basın
+O, skriptləri işə salacaq və üzvlər əlavə edəcək
+
+
+==Problemlərin aradan qaldırılması==
+
+1) Üzvlər əlavə edilmir
+
+Cavab- Hesabın məhdud olması səbəbindən ola bilər. Digər hesabları sınayın
+
+2) Giriş zamanı xəta
+
+Cavab- Əgər 2 faktorlu autentifikasiya aktivdirsə, onu söndürün. Daxil olduqdan sonra onu yenidən yandıra bilərsiniz
+
+
