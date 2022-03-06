@@ -29,7 +29,7 @@ def banner():
     logo = f.renderText('Telegram')
     print(random.choice(colors) + logo + rs)
     print(f'{info}{g} Telegram Adder[USERNAME] V1.1{rs}')
-    print(f'{info}{g} Author: github.com/johnkryptochain{rs}\n')
+    print(f'{info}{g} Owner: TG- t.me/nihatfarz{rs}\n')
 
 def clscreen():
     os.system('cls')
@@ -83,7 +83,7 @@ for user in users:
     n += 1
     added_users.append(user)
     if n % 50 == 0:
-        print(f'{sleep}{g} Sleep 2 min to prevent possible account ban{rs}')
+        print(f'{sleep}{g} Mümkün hesab qadağasının qarşısını almaq üçün 2 dəqiqə gözlüyürəm{rs}')
         time.sleep(120)
     try:
         if user['username'] == "":
@@ -91,26 +91,26 @@ for user in users:
         user_to_add = client.get_input_entity(user['username'])
         client(InviteToChannelRequest(entity, [user_to_add]))
         usr_id = user['user_id']
-        print(f'{attempt}{g} Adding {usr_id}{rs}')
-        print(f'{sleep}{g} Sleep 30s{rs}')
+        print(f'{attempt}{g} Əlavə Edilir {usr_id}{rs}')
+        print(f'{sleep}{g} 30s Gözləyir{rs}')
         time.sleep(30)
     except PeerFloodError:
         #time.sleep()
         os.system(f'del {file}')
-        sys.exit(f'\n{error}{r} Aborted. Peer Flood Error{rs}')
+        sys.exit(f'\n{error}{r} Aborted edildi. Peer Flood Xətası{rs}')
     except UserPrivacyRestrictedError:
-        print(f'{error}{r} User Privacy Restriction{rs}')
+        print(f'{error}{r} İstifadəçi Məxfilik Məhdudiyyəti{rs}')
         continue
     except KeyboardInterrupt:
-        print(f'{error}{r} Aborted. Keyboard Interrupt{rs}')
+        print(f'{error}{r} Aborted edildi. Klaviaturanın kəsilməsi{rs}')
         update_list(users, added_users)
         if not len(users) == 0:
-            print(f'{info}{g} Remaining users logged to {file}')
+            print(f'{info}{g} Qalan istifadəçilər daxil olub {file}')
             logger = Relog(users, file)
             logger.start()
     except:
-        print(f'{error}{r} Some Other error in adding{rs}')
+        print(f'{error}{r} Əlavə edərkən bəzi digər səhvlər{rs}')
         continue
 #os.system(f'del {file}')
-input(f'{info}{g}Adding complete...Press enter to exit...')
+input(f'{info}{g}Əlavə edilir...Çıxmaq üçün enter düyməsini basın...')
 sys.exit()
