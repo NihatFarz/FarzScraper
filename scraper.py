@@ -46,7 +46,7 @@ def clr():
 
 clr()
 banner()
-print(f'  {r}Version: {w}1.1 {r}| Author: {w}Johnkryptochain{rs}\n')
+print(f'  {r}Versiya: {w}1.1 {r}| Owner: {w}NihatFarz{rs}\n')
 f = open('vars.txt', 'rb')
 accs = []
 while True:
@@ -55,31 +55,31 @@ while True:
     except EOFError:
         f.close()
         break
-print(f'{INPUT}{cy} Choose an account to scrape members\n')
+print(f'{INPUT}{cy} Üzvləri yığmaq üçün hesab seçin\n')
 i = 0
 for acc in accs:
     print(f'{lg}({w}{i}{lg}) {acc[2]}')
     i += 1
-ind = int(input(f'\n{INPUT}{cy} Enter choice: '))
+ind = int(input(f'\n{INPUT}{cy} Seçim daxil edin: '))
 api_id = accs[ind][0]
 api_hash = accs[ind][1]
 phone = accs[ind][2]
-group_name = input(f"Enter the name of the group without the @: {r}")
+group_name = input(f"Qrupun adını @ olmadan daxil edin: {r}")
 c = TelegramClient(f'sessions\\{phone}', api_id, api_hash)
 c.connect()
 if not c.is_user_authorized():
     try:
         c.send_code_request(phone)
-        code = input(f'{INPUT}{lg} Enter the login code for {w}{phone}{r}: ')
+        code = input(f'{INPUT}{lg} giriş kodunu daxil edin {w}{phone}{r}: ')
         c.sign_in(phone, code)
     except PhoneNumberBannedError:
         print(f'{error}{w}{phone}{r} is banned!{rs}')
-        print(f'{error}{lg} Run {w}manager.py{lg} to filter them{rs}')
+        print(f'{error}{lg} Filterləmək üçün {w}manager.py{lg} faylını işə salın{rs}')
         sys.exit()
 group = c.get_entity(group_name)
 target_grp = "t.me/" + group_name
 
-choice = int(input(f"\n{lg}How would you like to obtain the users?\n\n{r}[{cy}0{r}]{lg} All users\n{r}[{cy}1{r}]{lg} Active Users(online today and yesterday)\n{r}[{cy}2{r}]{lg} Users active in the last week\n{r}[{cy}3{r}]{lg} Users active in the last month\n{r}[{cy}4{r}]{lg} Non-active users(not active in the last month) \n\nYour choice: "))
+choice = int(input(f"\n{lg}İstifadəçiləri necə əldə etmək istərdiniz?\n\n{r}[{cy}0{r}]{lg} Bütün istifadəçilər\n{r}[{cy}1{r}]{lg} Aktiv istifadəçilər(bu gün və dünən online olanlar)\n{r}[{cy}2{r}]{lg} Son 1 həftə online olanlar\n{r}[{cy}3{r}]{lg} Son 1 ay online olanlar\n{r}[{cy}4{r}]{lg} Son 1 aydan əvvəl online olanlar \n\nSeçiminiz: "))
 members = []
 members = c.iter_participants(group, aggressive=True)
 
@@ -96,7 +96,7 @@ def write(group,member):
     else:
         writer.writerow([username, member.id, member.access_hash, group.title, group.id,type(member.status).__name__])
 
-admin_choice = input(f"{lg}Would you like to have admins on a separate CSV file? {rs}[y/n] {lg}")
+admin_choice = input(f"{lg}Ayrı bir CSV faylında adminlərin olmasını istərdiniz? {rs}[y/n] {lg}")
 if admin_choice == "y" or admin_choice == "Y":
     with open("members\\admins.csv", "w", encoding='UTF-8') as f:
         writer = csv.writer(f, delimiter=",", lineterminator="\n")
@@ -118,7 +118,7 @@ with open("members\\members.csv", "w", encoding='UTF-8') as f:
                 if not member.bot:
                     write(group,member)                   
         except:
-            print("\nThere was a FloodWaitError, but check members.csv. More than 95%% of members should be already added.")
+            print("\nFloodWaitError var idi, lakin member.csv-ni yoxlayın. Üzvlərin 95%-dən çoxu artıq əlavə edilməlidir.")
     elif choice == 1:
         try:
             for index,member in enumerate(members):
@@ -135,7 +135,7 @@ with open("members\\members.csv", "w", encoding='UTF-8') as f:
                         if today_user or yesterday_user:
                             write(group,member)
         except:
-            print("\nThere was a FloodWaitError, but check members.csv. More than 95%% of members should be already added.")
+            print("\nFloodWaitError var idi, lakin member.csv-ni yoxlayın. Üzvlərin 95%-dən çoxu artıq əlavə edilməlidir.")
     elif choice == 2:
         try:
             for index,member in enumerate(members):
@@ -153,7 +153,7 @@ with open("members\\members.csv", "w", encoding='UTF-8') as f:
                             if correct_user:
                                 write(group,member)
         except:
-            print("\nThere was a FloodWaitError, but check members.csv. More than 95%% of members should be already added.")
+            print("\nFloodWaitError var idi, lakin member.csv-ni yoxlayın. Üzvlərin 95%-dən çoxu artıq əlavə edilməlidir.")
     elif choice == 3:
         try:
             for index,member in enumerate(members):
@@ -171,7 +171,7 @@ with open("members\\members.csv", "w", encoding='UTF-8') as f:
                             if correct_user:
                                 write(group,member)
         except:
-            print("\nThere was a FloodWaitError, but check members.csv. More than 95%% of members should be already added.")
+            print("\nFloodWaitError var idi, lakin member.csv-ni yoxlayın. Üzvlərin 95%-dən çoxu artıq əlavə edilməlidir.")
     elif choice == 4:
         try:
             all_users = []
@@ -195,11 +195,11 @@ with open("members\\members.csv", "w", encoding='UTF-8') as f:
                 if member not in active_users:
                     write(group,member)
         except:
-            print(f"\n{r}There was a FloodWaitError, but check members.csv. More than 95%% of members should be already added.")
+            print(f"\n{r}FloodWaitError var idi, lakin member.csv-ni yoxlayın. Üzvlərin 95%-dən çoxu artıq əlavə edilməlidir.")
                 
 f.close()
 
-print(f"\n{lg}Users saved in the csv file.{rs}\n")
+print(f"\n{lg}İstifadəçilər csv faylında saxlanılır.{rs}\n")
 clr()
 banner()
 with open('target_grp.txt', 'w') as f:
