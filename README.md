@@ -50,8 +50,14 @@
 # QEYD
 * 1/Tool sadəcə Windows,Ubuntu və Termux F-Droid (Yükləmək üçün (https://f-droid.org/en/packages/com.termux/)) versiyada işləyir.
                                 (Play marketdən yüklənilən Termuxlarda işləməyə vəya işləyən zaman xətalar çıxa bilər)
+    <br>
+
 * 2/Əyər Termux yeni yükləyirsinizsə bu linkə (https://github.com/NihatFarz/Termux-Basic-Commands) keçid edərək təməl termux qurulumun edin.
+    <br>
+
 * 3/Bəzən istifadəçilər ümumiyyətlə əlavə olunmaya bilər, bunun səbəbi hesabın məhdud olması və ya kanala daxil olmanız ola bilər. Başqa hesabla cəhd edin.
+    <br>
+
 
 <p align="center">
 ⠐🇦🇿 Əlaqə üçün🔳Contact Me🇱🇷⠐
