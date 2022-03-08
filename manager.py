@@ -20,7 +20,7 @@ def banner():
     f = pyfiglet.Figlet(font='slant')
     banner = f.renderText('Telegram')
     print(f'{random.choice(colors)}{banner}{n}')
-    print(r+'  Version: 1.1 | Author: Johnkryptochain'+n+'\n')
+    print(r+'  Versiya: 1.1 | Owner: Nihat 「 FARZ 」'+n+'\n')
 
 
 def clr():
@@ -34,43 +34,43 @@ while True:
     #print(r)
     banner()
     #print(n)
-    print(lg+'[1] Add new accounts'+n)
-    print(lg+'[2] Filter all banned accounts'+n)
-    print(lg+'[3] List out all the accounts'+n)
-    print(lg+'[4] Delete specific accounts'+n)
+    print(lg+'[1] Yeni hesablar əlavə edin'+n)
+    print(lg+'[2] Bütün qadağan edilmiş hesabları filtrləyin'+n)
+    print(lg+'[3] Bütün hesabların siyahısına baxın'+n)
+    print(lg+'[4] Xüsusi hesabları silin'+n)
     #print(lg+'[5] Update your Genisys'+n)
-    print(lg+'[5] Quit')
-    a = int(input(f'\nEnter your choice: {r}'))
+    print(lg+'[5] Çıxış')
+    a = int(input(f'\nSeçiminiz: {r}'))
     if a == 1:
         with open('vars.txt', 'ab') as g:
             newly_added = []
             while True:
-                a = int(input(f'\n{lg}Enter API ID: {r}'))
-                b = str(input(f'{lg}Enter API Hash: {r}'))
-                c = str(input(f'{lg}Enter Phone Number: {r}'))
+                a = int(input(f'\n{lg}API ID: {r}'))
+                b = str(input(f'{lg}API Hash: {r}'))
+                c = str(input(f'{lg}Telefon Nömrəniz: {r}'))
                 p = ''.join(c.split())
                 pickle.dump([a, b, p], g)
                 newly_added.append([a, b, p])
-                ab = input(f'\nDo you want to add more accounts?[y/n]: ')
+                ab = input(f'\nDaha çox hesab əlavə etmək istəyirsiniz?[y/n]: ')
                 if 'y' in ab:
                     pass
                 else:
-                    print('\n'+lg+'[i] Saved all accounts in vars.txt'+n)
+                    print('\n'+lg+'[i] Bütün hesabları vars.txt də saxlanıldı'+n)
                     g.close()
                     sleep(3)
                     clr()
-                    print(lg + '[*] Logging in from new accounts...\n')
+                    print(lg + '[*] Yeni hesablardan daxil olunur...\n')
                     for added in newly_added:
                         c = TelegramClient(f'sessions/{added[2]}', added[0], added[1])
                         try:
                             c.start()
-                            print(f'n\n{lg}[+] Logged in - {added[2]}')
+                            print(f'n\n{lg}[+] Daxil oldunuz - {added[2]}')
                             c.disconnect()
                         except PhoneNumberBannedError:
-                            print(f'{r}[!] {added[2]} is banned! Filter it using option 2')
+                            print(f'{r}[!] {added[2]} qadağandır! 2-ci seçimdən istifadə edərək onu çıxardın')
                             continue
                         print('\n')
-                    input(f'\n{lg}Press enter to goto main menu...')
+                    input(f'\n{lg}Əsas menyuya keçmək üçün enter düyməsini basın...')
                     break
         g.close()
     elif a == 2:
@@ -84,7 +84,7 @@ while True:
                 break
         h.close()
         if len(accounts) == 0:
-            print(r+'[!] There are no accounts! Please add some and retry')
+            print(r+'[!] Heç bir hesab yoxdur! Zəhmət olmasa bir hesab əlavə edin və yenidən cəhd edin')
             sleep(3)
         else:
             for account in accounts:
@@ -96,13 +96,13 @@ while True:
                 if not client.is_user_authorized():
                     try:
                         client.send_code_request(phone)
-                        client.sign_in(phone, input('[+] Enter the code: '))
+                        client.sign_in(phone, input('[+] Kodu daxil edin: '))
                     except PhoneNumberBannedError:
-                        print(r+str(phone) + ' is banned!'+n)
+                        print(r+str(phone) + ' qadağandır!'+n)
                         banned_accs.append(account)
             if len(banned_accs) == 0:
-                print(lg+'Congrats! No banned accounts')
-                input('\nPress enter to goto main menu')
+                print(lg+'Qadağan edilmiş hesablar yoxdur')
+                input('\nƏsas menyuya keçmək üçün enter düyməsini basın')
             else:
                 for m in banned_accs:
                     accounts.remove(m)
@@ -113,8 +113,8 @@ while True:
                         Phone = a[2]
                         pickle.dump([Id, Hash, Phone], k)
                 k.close()
-                print(lg+'[i] All banned accounts removed'+n)
-                input('\nPress enter to goto main menu')
+                print(lg+'[i] Bütün qadağan olunmuş hesablar silindi'+n)
+                input('\nƏsas menyuya keçmək üçün enter düyməsini basın')
     elif a == 3:
         display = []
         j = open('vars.txt', 'rb')
@@ -125,14 +125,14 @@ while True:
                 break
         j.close()
         print(f'\n{lg}')
-        print(f'API ID  |            API Hash              |    Phone')
+        print(f'API ID  |            API Hash              |    Nömrə')
         print(f'==========================================================')
         i = 0
         for z in display:
             print(f'{z[0]} | {z[1]} | {z[2]}')
             i += 1
         print(f'==========================================================')
-        input('\nPress enter to goto main menu')
+        input('\nƏsas menyuya keçmək üçün enter düyməsini basın')
 
     elif a == 4:
         accs = []
@@ -144,11 +144,11 @@ while True:
                 break
         f.close()
         i = 0
-        print(f'{lg}[i] Choose an account to delete\n')
+        print(f'{lg}[i] Silmək üçün hesabı seçin\n')
         for acc in accs:
             print(f'{lg}[{i}] {acc[2]}{n}')
             i += 1
-        index = int(input(f'\n{lg}[+] Enter a choice: {n}'))
+        index = int(input(f'\n{lg}[+] Seçiminiz: {n}'))
         phone = str(accs[index][2])
         session_file = phone + '.session'
         if os.name == 'nt':
@@ -159,8 +159,8 @@ while True:
         f = open('vars.txt', 'wb')
         for account in accs:
             pickle.dump(account, f)
-        print(f'\n{lg}[+] Account Deleted{n}')
-        input(f'{lg}Press enter to goto main menu{n}')
+        print(f'\n{lg}[+] Hesab Silindi{n}')
+        input(f'{lg}Əsas menyuya keçmək üçün enter düyməsini basın{n}')
         f.close()
     elif a == 5:
         clr()
