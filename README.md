@@ -1,60 +1,64 @@
-# Version 1.1
+<p align="center">
+   🔱「 FARZ 」🔱
+ <br>
+ <br>
+  
+ ![İzlənmə](https://visitor-badge.laobi.icu/badge?page_id=nihatfarz.FarzScraper)
+ <br>
+ <br>
 
-<b>tldr</b>: Adds accounts via phone number and API. If you want to add accounts only via phone, then scroll to the end. If you want more free projects like this, then please support me!
+<p align="center">  
+🇦🇿 Tool Telegram-da istifadəçiləri bir qrupdan və ya kanaldan digərinə köçürmək üçün yığılıb . 
+<p align="center">  
+🇱🇷 The tool is assembled in Telegram to move users from one group or channel to another .  
+ <br>
+ <br>  
 
-# Update Features
+<p align="center"> 
+🇦🇿-Qurulum üçün Aşağıdaki Kodları Termux-a kopyalayın.
+<p align="center">
+🇱🇷-Copy the following codes to Termux for Setup. 
+ <br>
 
-- Fixed bug with scraping. You can now scrape from public groups of any size.
-- Fixed bug with addbyid.py. You can now start adding by IDs again.
 
-# Features
 
-* ADDS IN BULK[by username]
-* Scrapes and adds to public groups
-* Adds 50-60 members on an average
-* Works in Windows systems
-* You can run unlimited accounts at the same time in order to add members
-* CSV files auto-distributer based on number of accounts to use
-* Powerful scraping tool that can scrape active members from any public group
-* You can add members both by username and by user ID
-* Least chances of account ban
-* Script auto-joins public group from all accounts for faster adding
-* Filters banned accounts and remove them, making things easy
-* It can also store unlimited accounts for adding purposes
-* Adding scripts launches automatically based on number of accounts to use
+# Versiya 1.1
 
-# How to use
+* Quraşdırma Tələbləri 
 
-<b>Suggestion: It is better to add by ID because if you add by username only users having usernames will be added. Moreover, it is slow</b>
+1-`git clone https://github.com/NihatFarz/FarzScraper`
 
-* Install Requirements
+2-`cd FarzScraper`
 
-`pip install -r requirements.txt`
+3-`pip install -r requirements.txt`
 
-* Read the complete tutorial `HOW_TO_USE.txt` and use it
+* Hər hansısa çətinlik olarsa `İSTİFADƏ-QAYDASI.txt` təlimatını oxuyun  
 
-* Add your accounts to add and scrape members
 
-`python manager.py`
+* Üzvləri əlavə etmək  üçün hesablarınızı əlavə edin
 
-* Scrape members
+4-`python manager.py`
 
-`python scraper.py`
+* Üzvləri yığmaq üçün
 
-* Add members
+5-`python scraper.py`
 
-`python tsadder.py`
+* Üzvləri əlavə etmək üçün
 
-# Note
+6-`python tsadder.py`
 
-Sometimes users may not get added at all, this may be because the account is probably limited or you entered a channel. Try with another account. 
+# QEYD
+* 1/Tool sadəcə Windows,Ubuntu və Termux F-Droid (Yükləmək üçün (https://f-droid.org/en/packages/com.termux/)) versiyada işləyir.
+                                (Play marketdən yüklənilən Termuxlarda işləməyə vəya işləyən zaman xətalar çıxa bilər)
+* 2/Əyər Termux yeni yükləyirsinizsə bu linkə (https://github.com/NihatFarz/Termux-Basic-Commands) keçid edərək təməl termux qurulumun edin.
+* 3/Bəzən istifadəçilər ümumiyyətlə əlavə olunmaya bilər, bunun səbəbi hesabın məhdud olması və ya kanala daxil olmanız ola bilər. Başqa hesabla cəhd edin.
 
-# Buy me a coffee
+<p align="center">
+⠐🇦🇿 Əlaqə üçün🔳Contact Me🇱🇷⠐
+<p align="center">
+<a href="https://telegram.me/nihatfarz"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
 
-ETH: 0xF5ea71c5b98A33f9B8Dc9ae64F681488Ec7308E0
+# DİQQƏT!!!
 
-# Warning
-
-* This tool is official and completely free to use. Do not buy if anyone tries to sell by copying script
-
+* Bu alət rəsmidir və istifadəsi tamamilə pulsuzdur. Kimsə skripti kopyalayaraq satmağa cəhd edərsə almayın 
 
