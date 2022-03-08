@@ -41,7 +41,7 @@ def banner():
     f = pyfiglet.Figlet(font='slant')
     logo = f.renderText('Telegram')
     print(random.choice(colors) + logo + rs)
-    print(f'{r}   Version: {w}1.1 {r}| Author: {w}Johnkryptochain{rs}')
+    print(f'{r}   Versiya: {w}1.1 {r}| Owner: {w}NihatFarz{rs}')
 
 
 def clr():
@@ -76,7 +76,7 @@ while True:
         accounts.append(pickle.load(f))
     except EOFError:
         break
-print('\n' + info + lg + ' Creating sessions for all accounts...' + rs)
+print('\n' + info + lg + ' Bütün hesablar üçün sessiyaların yaradılması...' + rs)
 for a in accounts:
     iD = int(a[0])
     Hash = str(a[1])
@@ -87,28 +87,28 @@ for a in accounts:
     if not clnt.is_user_authorized():
         try:
             clnt.send_code_request(phn)
-            code = input(f'{INPUT}{lg} Enter code for {w}{phn}{cy}[s to skip]:{r}')
+            code = input(f'{INPUT}{lg} üçün kodu daxil edin {w}{phn}{cy}[s vəya skip]:{r}')
             if 's' in code:
                 accounts.remove(a)
             else:
                 clnt.sign_in(phn, code)
         except PhoneNumberBannedError:
-            print(f'{error}{w}{phn} {r}is banned!{rs}')
+            print(f'{error}{w}{phn} {r}qadağandır!{rs}')
             banned.append(a)
     for z in banned:
         accounts.remove(z)
-        print('\n'+info+lg+'Banned account removed'+rs)
+        print('\n'+info+lg+'Qadağan edilmiş hesab silindi'+rs)
     time.sleep(0.5)
     clnt.disconnect()
 
 
 print(info+' Sessions created!')
 time.sleep(2)
-print(f'{plus}{lg} Enter the exact username of the public group{w}[Without @]')
-g = input(f'{INPUT}{lg} Username[Eg: Techmedies_Hub]: {r}')
+print(f'{plus}{lg} İctimai qrupun dəqiq istifadəçi adını daxil edin{w}[@-olmadan]')
+g = input(f'{INPUT}{lg} İstifadəçi adı[Nüm: gruptest]: {r}')
 group = 't.me/' + str(g)
 #print('\n')
-print(f'{info}{lg} Joining from all accounts...{rs}')
+print(f'{info}{lg} Bütün hesablardan qoşulma...{rs}')
 for account in accounts:
     api_id = int(account[0])
     api_hash = str(account[1])
@@ -118,19 +118,19 @@ for account in accounts:
     try:
         username = client.get_entity(group)
         client(JoinChannelRequest(username))
-        print(f'{success}{lg} Joined from {phone}')
+        print(f'{success}{lg} -dan qoşulub {phone}')
     except:
-        print(f'{error}{r} Error in joining from {phone}')
+        print(f'{error}{r} qoşulma xətası  {phone}')
         accounts.remove(account)
     client.disconnect()
 time.sleep(2)
 clr()
 number = len(accounts)
-print(f'{info}{lg} Total accounts: {w}{number}')
-print(f'{info}{lg} If you have more than 10 accounts then it is recommended to use 10 at a time')
-a = int(input(f'{plus}{lg} Enter number of accounts to use: {r}'))
+print(f'{info}{lg} Ümumi hesablar: {w}{number}')
+print(f'{info}{lg} Əgər 10-dan çox hesabınız varsa, bir anda 10 hesabdan istifadə etmək tövsiyə olunur')
+a = int(input(f'{plus}{lg} İstifadə ediləcək hesabların sayını daxil edin: {r}'))
 to_use = []
-print(f'\n{info}{lg} Distributing CSV files...{rs}')
+print(f'\n{info}{lg} CSV fayllarının alınması...{rs}')
 time.sleep(2)
 for i in accounts[:a]:
     done = []
@@ -171,19 +171,19 @@ with open('resume.txt', 'w') as f:
     f.write(scraped_grp)
     f.close()
 '''
-print(f'{info}{lg} CSV file distribution complete{rs}')
+print(f'{info}{lg} CSV faylının alınması tamamlandı{rs}')
 time.sleep(2)
 clr()
 if not os.name == 'nt':
-    print(f'{error}{r} Automation supports only Windows systems')
+    print(f'{error}{r} Avtomatlaşdırma yalnız Windows sistemlərini dəstəkləyir')
     sys.exit()
 
 program = 'usradder.py'
 o = str(len(to_use))
-print(f'\n{info}{r} This will be fully automated.')
-print(f'{info}{r} Don\'t touch the keyboard until cmd window pop-up stops')
-input(f'\n{plus}{lg} Press enter to continue...{rs}')
-print(f'\n{info}{lg} Launching from {o} accounts...{rs}\n')
+print(f'\n{info}{r} Bu tam avtomatlaşdırılacaq.')
+print(f'{info}{r} Cmd pəncərəsi açılana qədər klaviaturaya toxunmayın')
+input(f'\n{plus}{lg} Davam etmək üçün enter düyməsini basın...{rs}')
+print(f'\n{info}{lg} {o} hesabdan işə salınır...{rs}\n')
 for i in range(5, 0, -1):
     print(random.choice(colors) + str(i) + rs)
     time.sleep(1)
@@ -196,5 +196,5 @@ for account in to_use:
     time.sleep(1.5)
     keyboard.write('python' + ' ' + program + ' ' + api_id + ' ' + api_hash + ' ' + phone + ' ' + file + ' ' + group + ' ' + str(scraped_grp))
     keyboard.press_and_release('Enter')
-    print(f'{plus}{lg} Launched from {phone}')
+    print(f'{plus}{lg} Başladı {phone}')
 #beepy.beep(sound='ping')
