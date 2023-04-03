@@ -61,3 +61,4 @@ Cavab- Hesabın məhdud olması səbəbindən ola bilər. Digər hesabları sın
 Cavab- Əgər 2 faktorlu autentifikasiya aktivdirsə, onu söndürün. Daxil olduqdan sonra onu yenidən yandıra bilərsiniz
 
 
+
